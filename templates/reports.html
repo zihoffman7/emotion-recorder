@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Reports
+{% endblock %}
+
+{% block content %}
+<div id="page-body">
+{% if summarylen > 0 %}
+  <script>
+    var summary = JSON.parse({{ summary|tojson }});
+    for (var i = 0; i < summary.summary.length; i++) {
+      document.getElementById("page-body").appendChild(new Piechart({
+        data: JSON.parse(summary.summary[i].data),
+        title: summary.summary[i].title,
+        subtitle: summary.summary[i].subtitle,
+        colors: pieColors,
+        holeSize: 0.5,
+        legend: true,
+        href: summary.summary[i].href
+      }));
+    }
+  </script>
+{% else %}
+  <p>There's nothing here</p>
+{% endif %}
+
+</div>
+{% endblock %}

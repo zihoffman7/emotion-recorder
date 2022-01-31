@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/charts.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename='js/charts.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+  </head>
+  <body>
+    <div id="navbar">
+      <span id="title">Title</span>
+      <span id="links">
+      {% if loggedin %}
+        <span>
+          <a href="{{ url_for('main.form') }}">Form</a>
+        </span>
+        <span>
+          <a href="{{ url_for('main.reports') }}">Reports</a>
+        </span>
+        <span>
+          <a href="{{ url_for('main.logout') }}">Log out</a>
+        </span>
+      {% else %}
+        <span>
+          <a href="{{ url_for('main.login') }}">Log in</a>
+        </span>
+        <span>
+          <a href="{{ url_for('main.register') }}">Create account</a>
+        </span>
+      {% endif %}
+      </span>
+    </div>
+    <div id="header">
+      <h1 class="image-centered">{% block title %}{% endblock %}</h1>
+    </div>
+    {% block content%}{% endblock %}
+  </body>
+</html>

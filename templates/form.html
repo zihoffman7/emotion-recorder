@@ -1,0 +1,245 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Form
+{% endblock %}
+
+{% block content %}
+<form method="POST" class="log-form">
+  <div class="form-question">
+    <table class="select-table">
+      <tr class="muted">
+        <th></th>
+        <td>None</td>
+        <td>Low</td>
+        <td>Some</td>
+        <td>Lots</td>
+        <td>High</td>
+      </tr>
+
+      <tr>
+        <th>Agitation</th>
+        <td>
+          <input type="radio" required name="agitation-level" value="1">
+        </td>
+        <td>
+          <input type="radio" required name="agitation-level" value="2">
+        </td>
+        <td>
+          <input type="radio" required name="agitation-level" value="3">
+        </td>
+        <td>
+          <input type="radio" required name="agitation-level" value="4">
+        </td>
+        <td>
+          <input type="radio" required name="agitation-level" value="5">
+        </td>
+      </tr>
+
+      <tr>
+        <th>Anger</th>
+        <td>
+          <input type="radio" required name="anger-level" value="1">
+        </td>
+        <td>
+          <input type="radio" required name="anger-level" value="2">
+        </td>
+        <td>
+          <input type="radio" required name="anger-level" value="3">
+        </td>
+        <td>
+          <input type="radio" required name="anger-level" value="4">
+        </td>
+        <td>
+          <input type="radio" required name="anger-level" value="5">
+        </td>
+      </tr>
+
+      <tr>
+        <th>Anxiousness</th>
+        <td>
+          <input type="radio" required name="anxious-level" value="1">
+        </td>
+        <td>
+          <input type="radio" required name="anxious-level" value="2">
+        </td>
+        <td>
+          <input type="radio" required name="anxious-level" value="3">
+        </td>
+        <td>
+          <input type="radio" required name="anxious-level" value="4">
+        </td>
+        <td>
+          <input type="radio" required name="anxious-level" value="5">
+        </td>
+      </tr>
+
+      <tr>
+        <th>Confidence</th>
+        <td>
+          <input type="radio" required name="confidence-level" value="1">
+        </td>
+        <td>
+          <input type="radio" required name="confidence-level" value="2">
+        </td>
+        <td>
+          <input type="radio" required name="confidence-level" value="3">
+        </td>
+        <td>
+          <input type="radio" required name="confidence-level" value="4">
+        </td>
+        <td>
+          <input type="radio" required name="confidence-level" value="5">
+        </td>
+      </tr>
+
+      <tr>
+        <th>Depression</th>
+        <td>
+          <input type="radio" required name="depression-level" value="1">
+        </td>
+        <td>
+          <input type="radio" required name="depression-level" value="2">
+        </td>
+        <td>
+          <input type="radio" required name="depression-level" value="3">
+        </td>
+        <td>
+          <input type="radio" required name="depression-level" value="4">
+        </td>
+        <td>
+          <input type="radio" required name="depression-level" value="5">
+        </td>
+      </tr>
+
+      <tr>
+        <th>Joy</th>
+        <td>
+          <input type="radio" required name="joy-level" value="1">
+        </td>
+        <td>
+          <input type="radio" required name="joy-level" value="2">
+        </td>
+        <td>
+          <input type="radio" required name="joy-level" value="3">
+        </td>
+        <td>
+          <input type="radio" required name="joy-level" value="4">
+        </td>
+        <td>
+          <input type="radio" required name="joy-level" value="5">
+        </td>
+      </tr>
+
+      <tr>
+        <th>Melancholic</th>
+        <td>
+          <input type="radio" required name="melancholic-level" value="1">
+        </td>
+        <td>
+          <input type="radio" required name="melancholic-level" value="2">
+        </td>
+        <td>
+          <input type="radio" required name="melancholic-level" value="3">
+        </td>
+        <td>
+          <input type="radio" required name="melancholic-level" value="4">
+        </td>
+        <td>
+          <input type="radio" required name="melancholic-level" value="5">
+        </td>
+      </tr>
+
+      <tr>
+        <th>Motivation</th>
+        <td>
+          <input type="radio" required name="motivation-level" value="1">
+        </td>
+        <td>
+          <input type="radio" required name="motivation-level" value="2">
+        </td>
+        <td>
+          <input type="radio" required name="motivation-level" value="3">
+        </td>
+        <td>
+          <input type="radio" required name="motivation-level" value="4">
+        </td>
+        <td>
+          <input type="radio" required name="motivation-level" value="5">
+        </td>
+      </tr>
+
+      <tr>
+        <th>Optimism</th>
+        <td>
+          <input type="radio" required name="optimism-level" value="1">
+        </td>
+        <td>
+          <input type="radio" required name="optimism-level" value="2">
+        </td>
+        <td>
+          <input type="radio" required name="optimism-level" value="3">
+        </td>
+        <td>
+          <input type="radio" required name="optimism-level" value="4">
+        </td>
+        <td>
+          <input type="radio" required name="optimism-level" value="5">
+        </td>
+      </tr>
+
+      <tr>
+        <th>Self-worth</th>
+        <td>
+          <input type="radio" required name="selfworth-level" value="1">
+        </td>
+        <td>
+          <input type="radio" required name="selfworth-level" value="2">
+        </td>
+        <td>
+          <input type="radio" required name="selfworth-level" value="3">
+        </td>
+        <td>
+          <input type="radio" required name="selfworth-level" value="4">
+        </td>
+        <td>
+          <input type="radio" required name="selfworth-level" value="5">
+        </td>
+      </tr>
+
+      <tr class="muted">
+        <th></th>
+        <td>Bad</td>
+        <td></td>
+        <td>OK</td>
+        <td></td>
+        <td>Good</td>
+      </tr>
+      <tr>
+        <th>General mood</th>
+        <td>
+          <input type="radio" required name="general-level" value="1">
+        </td>
+        <td>
+          <input type="radio" required name="general-level" value="2">
+        </td>
+        <td>
+          <input type="radio" required name="general-level" value="3">
+        </td>
+        <td>
+          <input type="radio" required name="general-level" value="4">
+        </td>
+        <td>
+          <input type="radio" required name="general-level" value="5">
+        </td>
+      </tr>
+    </table>
+    <p style="text-align: center;"><input type="submit" value="Submit"></p>
+  </div>
+</form>
+
+
+
+
+
+{% endblock %}

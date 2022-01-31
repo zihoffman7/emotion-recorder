@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Log in
+{% endblock %}
+
+{% block content %}
+<form method="POST" class="credential-form">
+  {% if flash %}
+  <p style="margin-bottom: 12px;"><span class="flash">{{ flash }}</span></p>
+  {% endif %}
+  <p><input type="text" name="username" maxlength="24" placeholder="Username" autocomplete="off" required></p>
+  <p><input type="password" name="password" maxlength="52" placeholder="Password" autocomplete="off" required></p>
+  <p><input type="submit" value="Submit"></p>
+</form>
+{% endblock %}

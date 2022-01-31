@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block content %}
+<div id="page-body">
+{% if summary %}
+  <script>
+    var summary = JSON.parse({{ summary|tojson }});
+    for (var i = 0; i < summary.summary.length; i++) {
+      var pie = document.createElement("div");
+      var scales = document.createElement("div");
+
+      var data = JSON.parse(summary.summary[i].data);
+      var piechart = new Piechart({
+        data: data,
+        title: ("{{ title }}".split(" ")[0] == "All") ? "Balance" : "{{ title }}".split(" ")[0] + " balance",
+        subtitle: "&nbsp;",
+        colors: pieColors,
+        holeSize: 0.5,
+        legend: true,
+        href: summary.summary[i].href
+      });
+      pie.appendChild(piechart);
+      var general = document.createElement("div");
+      if (summary.summary[i].general) {
+        console.log(summary.summary)
+        for (var j in summary.summary[i].general) {
+
+          general.appendChild(new ScaleBar({
+            data: [(summary.summary[i].general[j]) / summary.summary[i].count],
+            dataRange: [1, 5],
+            colors: ["#5c5c5c", "#ededed"],
+            title: j,
+            legend: true,
+            border: false
+          }));
+        }
+        general.appendChild(document.createElement("p"));
+      }
+
+      var count = 0;
+      for (var j in data) {
+        scales.appendChild(new ScaleBar({
+          data: [(data[j] + (summary.summary[i].count)) / summary.summary[i].count],
+          dataRange: [1, 5],
+          colors: ["#ededed", pieColors[count]],
+          title: j,
+          legend: true,
+          border: true
+        }));
+        count++;
+      }
+      $("#page-body").append(`<div class="dropdown-container-container">
+        <div class="dropdown-container">
+          <h2 class="dropdown-click"><span class="arrow right"></span><span class="dropdown-title">${summary.summary[i].title}</span></h2>
+          <div class="dropdown" hidden>
+          </div>
+        </div>
+      </div>`);
+      document.getElementsByClassName("dropdown")[document.getElementsByClassName("dropdown").length - 1].appendChild(pie).appendChild(general).appendChild(scales);
+    }
+
+    // toggleSeasonDropdown($(".dropdown-container").first());
+  </script>
+{% endif %}
+</div>
+{% endblock %}
